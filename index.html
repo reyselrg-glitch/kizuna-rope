@@ -63,6 +63,13 @@
 .kr-body-guide small{color:#c9a5a0;line-height:1.4}
 @media(min-width:700px){.kr-knot-steps{grid-template-columns:1fr 1fr}}
 
+
+.kr-knot-entry{padding:16px;margin:18px 0;border:1px solid #a5263a;background:linear-gradient(140deg,#270b10,#10070a);border-radius:17px}
+.kr-knot-entry h2{font:700 24px Georgia,serif;color:#f7e6d6;margin:6px 0}
+.kr-knot-entry p{font:14px/1.6 Arial,sans-serif;color:#e3c1b8}
+.kr-knot-entry>div{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.kr-knot-entry button{min-height:47px;padding:7px 5px;border-radius:9px;color:#ffebe3;background:#7d091a;border:1px solid #e93d50;font:700 12px Arial,sans-serif;cursor:pointer}
+
 </style>
   <title>Kizuna Rope · Arte, Técnica y Conexión</title>
   <link rel="manifest" href="./manifest.webmanifest" />
@@ -179,7 +186,7 @@ function home(){return `<section class="hero"><div class="hero-person" role="img
 function pageHead(title,description){return `<div class="page-top"><button class="back" data-page="home">‹ ${tx('Volver al inicio','Back to home')}</button><h1>${title}</h1><p>${description}</p></div>`}
 
 function academy(){
- return pageHead(tx('Academia','Academy'),tx('Aprende con un recorrido progresivo y responsable.','Learn with a progressive and responsible path.'))+'<div class="content ac-content"><div class="ac-intro"><img src="./academy-basic.webp" alt="'+tx('Primer plano de un nudo de cuerda roja','Close-up of a red rope knot')+'" loading="lazy"><div><span class="ac-eyebrow">THE ROPE CLUB</span><h2>'+tx('Tres niveles. Un aprendizaje consciente.','Three levels. Mindful learning.')+'</h2><p>'+tx('Fotografías, lecturas, análisis de nudos y preguntas para repasar.','Photographs, readings, knot analysis, and review questions.')+'</p></div></div><div class="ac-section"><h2>'+tx('Rutas de aprendizaje','Learning paths')+'</h2><p>'+tx('Elige el nivel y toca una lección para abrirla.','Select a level and open a lesson.')+'</p></div><div class="ac-routes">'+courses.map(courseTile).join('')+'</div><div class="ac-note">'+tx('Las imágenes son ilustrativas. Este programa no certifica habilidades de amarre. Los amarres corporales y las suspensiones requieren formación presencial cualificada.','Images are illustrative. This program does not certify tying skills. Body restraints and suspension require qualified in-person training.')+'</div></div>';
+ return pageHead(tx('Academia','Academy'),tx('Aprende con un recorrido progresivo y responsable.','Learn with a progressive and responsible path.'))+'<div class="content ac-content"><div class="ac-intro"><img src="./academy-basic.webp" alt="'+tx('Primer plano de un nudo de cuerda roja','Close-up of a red rope knot')+'" loading="lazy"><div><span class="ac-eyebrow">THE ROPE CLUB</span><h2>'+tx('Tres niveles. Un aprendizaje consciente.','Three levels. Mindful learning.')+'</h2><p>'+tx('Fotografías, lecturas, análisis de nudos y preguntas para repasar.','Photographs, readings, knot analysis, and review questions.')+'</p></div></div><div class="ac-section"><h2>'+tx('Rutas de aprendizaje','Learning paths')+'</h2><p>'+tx('Elige el nivel y toca una lección para abrirla.','Select a level and open a lesson.')+'</p></div><div class="kr-knot-entry"><h2>'+tx('Demostraciones de nudos con cuerda real','Real rope knot demonstrations')+'</h2><p>'+tx('Aprende a formar tres nudos: pasos claros, animaciones verificadas y ejemplos decorativos sobre maniquí.','Learn three knots with clear steps, verified animations, and decorative mannequin examples.')+'</p><div><button data-page="lesson" data-id="basic:9">'+tx('Nudo simple','Overhand')+'</button><button data-page="lesson" data-id="basic:10">'+tx('Nudo de ocho','Figure eight')+'</button><button data-page="lesson" data-id="basic:11">'+tx('Alondra','Cow hitch')+'</button></div></div><div class="ac-routes">'+courses.map(courseTile).join('')+'</div><div class="ac-note">'+tx('Las imágenes son ilustrativas. Este programa no certifica habilidades de amarre. Los amarres corporales y las suspensiones requieren formación presencial cualificada.','Images are illustrative. This program does not certify tying skills. Body restraints and suspension require qualified in-person training.')+'</div></div>';
 }
 function academyLessonRows(c){
  const lessons=academyModules[c.id]||[];
