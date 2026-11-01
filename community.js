@@ -6,6 +6,7 @@
   const $ = id => document.getElementById(id);
   const s = {user:null, profile:null, posts:[], people:{}, comments:[], mode:'login', serial:0};
   let client;
+  let lastResendAt=0;
   function show(id) {
     ['auth','onboarding','community'].forEach(name => $(name).hidden = name !== id);
   }
@@ -14,7 +15,9 @@
   }
   function errMessage(error) {
     if (!error) return 'No fue posible completar la operación.';
-    if (error.code === 'email_not_confirmed') return 'Confirma primero tu correo electrónico y vuelve a iniciar sesión.';
+    if (error.code === 'email_not_confirmed') return 'Tu correo sigue pendiente de confirmación. Si no recibiste el mensaje, utiliza «Reenviar correo de confirmación».';
+    if (error.code === 'over_email_send_rate_limit'||error.status === 429) return 'Has alcanzado el límite temporal de envíos. Espera antes de volver a intentarlo.';
+    if (error.code === 'email_address_not_authorized') return 'El proveedor de correos de prueba no permite enviar a esta dirección. Debemos configurar SMTP en Supabase.';
     if (error.code === 'invalid_credentials') return 'Correo o contraseña incorrectos.';
     if (error.code === 'user_already_exists') return 'Ese correo ya tiene cuenta. Intenta iniciar sesión.';
     return error.message || 'No fue posible completar la operación.';
@@ -107,6 +110,18 @@
     if(!window.supabase?.createClient){notice('No se pudo cargar el servicio de inicio de sesión. Comprueba tu conexión e inténtalo de nuevo.','error');show('auth');return;}
     client=window.supabase.createClient(PROJECT_URL,PUBLISHABLE_KEY,{auth:{persistSession:true,autoRefreshToken:true,detectSessionInUrl:true}});
     $('tab-login').addEventListener('click',()=>mode('login'));$('tab-register').addEventListener('click',()=>mode('register'));
+    $('resend-confirmation').addEventListener('click',async()=>{
+      const email=$('email').value.trim();
+      if(!email||!$('email').checkValidity()){notice('Escribe primero tu correo electrónico en el campo de arriba.','error');$('email').focus();return;}
+      if(Date.now()-lastResendAt<60000){notice('Espera al menos un minuto antes de solicitar otro correo.','error');return;}
+      const button=$('resend-confirmation');button.disabled=true;
+      try {
+        const {error}=await client.auth.resend({type:'signup',email,options:{emailRedirectTo:location.href.split('#')[0]}});
+        if(error)throw error;
+        lastResendAt=Date.now();
+        notice('Solicitud enviada a Supabase. Revisa Recibidos, Spam y Promociones. Esto no garantiza la entrega en Gmail.','ok');
+      }catch(e){notice(errMessage(e),'error')}finally{button.disabled=false}
+    });
     $('auth-form').addEventListener('submit',async ev=>{
       ev.preventDefault();const form=ev.currentTarget;const email=$('email').value.trim();const password=$('password').value;
       if(s.mode==='register'&&(!$('signup-adult').checked||!$('signup-consent').checked)){notice('Debes confirmar tu edad y aceptar las normas.','error');return;}
@@ -116,7 +131,7 @@
           const result=await client.auth.signUp({email,password,options:{emailRedirectTo:location.href.split('#')[0]}});
           if(result.error)throw result.error;
           if(result.data.session){notice('Cuenta creada. Completa tu perfil.','ok');await syncSession(result.data.session);}
-          else notice('Revisa tu correo para confirmar la cuenta. Después regresa aquí e inicia sesión.','ok');
+          else notice('Registro recibido. Si el correo no llega a Gmail, revisa Spam y Promociones o utiliza «Reenviar correo de confirmación».','ok');
         } else {
           const result=await client.auth.signInWithPassword({email,password});
           if(result.error)throw result.error;
