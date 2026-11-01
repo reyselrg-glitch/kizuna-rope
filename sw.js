@@ -1,4 +1,4 @@
-const VERSION='kizuna-rope-v5';
+const VERSION='kizuna-rope-v6';
 const CORE=['./','./index.html','./manifest.webmanifest','./icon.svg','./logo-lockup.svg','./app-icon-192.png','./app-icon-512.png','./brand-header.webp','./welcome.webp','./academy-basic.webp','./academy-middle.webp','./academy-advanced.webp','./community.html','./community.js'];
 self.addEventListener('install', event=>event.waitUntil(caches.open(VERSION).then(cache=>cache.addAll(CORE)).then(()=>self.skipWaiting())));
 self.addEventListener('activate', event=>event.waitUntil(caches.keys().then(names=>Promise.all(names.filter(name=>name.startsWith('kizuna-rope-')&&name!==VERSION).map(name=>caches.delete(name)))).then(()=>self.clients.claim())));
