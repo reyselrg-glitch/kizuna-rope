@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 370" role="img" aria-label="Kizuna Rope, The Rope Club">
+<defs><linearGradient id="word" x1="0" y1="0" x2=".6" y2="1"><stop stop-color="#f8f1e5"/><stop offset="1" stop-color="#e5c6a9"/></linearGradient></defs>
+<g transform="translate(0,-57) scale(.91)">
+<defs>
+<linearGradient id="ring" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#ff3539"/><stop offset=".45" stop-color="#a00510"/><stop offset=".7" stop-color="#dc001c"/><stop offset="1" stop-color="#62000b"/></linearGradient>
+<linearGradient id="rope" x1="0" y1="0" x2=".9" y2="1"><stop stop-color="#ff4451"/><stop offset=".28" stop-color="#ec0d2a"/><stop offset=".62" stop-color="#a80015"/><stop offset=".86" stop-color="#e62239"/><stop offset="1" stop-color="#760009"/></linearGradient>
+<linearGradient id="ivory" x1=".1" y1="0" x2=".8" y2="1"><stop stop-color="#fffaf0"/><stop offset=".6" stop-color="#f4e1cf"/><stop offset="1" stop-color="#9e8779"/></linearGradient>
+<linearGradient id="redtext" x1="0" y1="0" x2=".8" y2="1"><stop stop-color="#f53b3d"/><stop offset=".4" stop-color="#dd0019"/><stop offset="1" stop-color="#840009"/></linearGradient>
+</defs>
+<rect width="512" height="512" rx="95" fill="#050304"/>
+<circle cx="256" cy="245" r="194" fill="#070405" stroke="#520008" stroke-width="24"/>
+<circle cx="256" cy="245" r="194" fill="none" stroke="url(#ring)" stroke-width="16"/>
+<path d="M88 241 C 128 174 186 206 242 269 S 364 333 424 242 C 449 205 424 161 390 169 C 352 183 359 236 294 269" fill="none" stroke="#300003" stroke-width="42" stroke-linecap="round"/>
+<path d="M88 241 C 128 174 186 206 242 269 S 364 333 424 242 C 449 205 424 161 390 169 C 352 183 359 236 294 269" fill="none" stroke="url(#rope)" stroke-width="31" stroke-linecap="round"/>
+<text x="195" y="312" font-family="Georgia,'Times New Roman',serif" font-size="260" font-style="italic" font-weight="700" fill="url(#ivory)" text-anchor="middle">K</text>
+<text x="301" y="318" font-family="Georgia,'Times New Roman',serif" font-size="239" font-style="italic" font-weight="700" fill="url(#redtext)" text-anchor="middle">R</text>
+<path d="M105 336 C 178 397 248 391 321 359 S 427 320 399 374 C 371 424 311 409 282 378 C 246 342 219 342 183 385 C 147 426 84 389 116 351 C 149 316 215 354 258 377 S 320 410 337 382" fill="none" stroke="#2f0005" stroke-width="49" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M105 336 C 178 397 248 391 321 359 S 427 320 399 374 C 371 424 311 409 282 378 C 246 342 219 342 183 385 C 147 426 84 389 116 351 C 149 316 215 354 258 377 S 320 410 337 382" fill="none" stroke="url(#rope)" stroke-width="34" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M110 341 C 186 399 245 381 327 354 S 425 326 392 377 C 365 412 312 398 286 374 C 242 340 207 360 178 384 C 145 411 111 381 126 352 C 159 330 216 373 261 379 S 310 407 331 384" fill="none" stroke="#ff7e81" stroke-opacity=".45" stroke-width="3.5" stroke-dasharray="8 10"/>
+</g>
+<path d="M470 92V316" stroke="#a60b1a" stroke-width="4"/>
+<text x="507" y="218" font-family="Georgia,'Times New Roman',serif" font-size="143" font-weight="600" fill="url(#word)">Kizuna</text>
+<text x="1030" y="218" font-family="Georgia,'Times New Roman',serif" font-size="148" font-style="italic" fill="#d20a19">Rope</text>
+<path d="M522 285H594M1292 285H1370" stroke="#be1420" stroke-width="4"/>
+<text x="941" y="307" font-family="Georgia,'Times New Roman',serif" letter-spacing="13" font-size="47" text-anchor="middle" fill="#f3e6d5">THE ROPE CLUB</text>
+</svg>

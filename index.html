@@ -17,6 +17,8 @@
 @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}
 
  .site-credit{max-width:800px;margin:auto;padding:16px 16px 95px;text-align:center;color:#bda39a;font:12px/1.5 Georgia,serif} 
+.brand .brand-lockup{width:min(56vw,272px);height:auto;max-height:58px;object-fit:contain}
+.splash-logo{width:min(58vw,235px)}
 </style>
   <title>Kizuna Rope · Arte, Técnica y Conexión</title>
   <link rel="manifest" href="./manifest.webmanifest" />
@@ -24,16 +26,15 @@
 </head>
 <body>
   <div id="splash" class="splash" aria-label="Kizuna Rope" role="status">
-    <img class="splash-logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIgNTEyIiBhcmlhLWxhYmVsPSJLUiBLaXp1bmEgUm9wZSI+CjxkZWZzPjxyYWRpYWxHcmFkaWVudCBpZD0iYSI+PHN0b3Agc3RvcC1jb2xvcj0iIzI0MDgwYyIvPjxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iIzA3MDQwNCIvPjwvcmFkaWFsR3JhZGllbnQ+PGxpbmVhckdyYWRpZW50IGlkPSJyIiB4MT0iMCIgeDI9IjEiPjxzdG9wIHN0b3AtY29sb3I9IiM4MjAwMDkiLz48c3RvcCBvZmZzZXQ9Ii41IiBzdG9wLWNvbG9yPSIjZjAxYjJhIi8+PHN0b3Agb2Zmc2V0PSIxIiBzdG9wLWNvbG9yPSIjNzYwMjBkIi8+PC9saW5lYXJHcmFkaWVudD48L2RlZnM+CjxyZWN0IHdpZHRoPSI1MTIiIGhlaWdodD0iNTEyIiByeD0iMTE2IiBmaWxsPSIjMGEwNzA4Ii8+PGNpcmNsZSBjeD0iMjU2IiBjeT0iMjQ5IiByPSIxNzkiIGZpbGw9InVybCgjYSkiIHN0cm9rZT0idXJsKCNyKSIgc3Ryb2tlLXdpZHRoPSIxNSIvPgo8cGF0aCBkPSJNMTE0IDI1NSBBMTQyIDE0MiAwIDAgMSAzOTggMjU1IiBzdHJva2U9IiNlNTM1M2IiIHN0cm9rZS13aWR0aD0iMyIgZmlsbD0ibm9uZSIgb3BhY2l0eT0iLjUiLz4KPHRleHQgeD0iMjU3IiB5PSIzMDUiIGZvbnQtc2l6ZT0iMjA2IiBmb250LWZhbWlseT0iR2VvcmdpYSwnVGltZXMgTmV3IFJvbWFuJyxzZXJpZiIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZmlsbD0iI2Y0ZTZkMCIgbGV0dGVyLXNwYWNpbmc9Ii0zMiI+S1I8L3RleHQ+CjxnIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgZmlsbD0ibm9uZSI+PHBhdGggZD0iTTEwMyAzMjIgUTE1OSAyODkgMjA3IDMxOCBUMzEyIDMyMCBUNDE0IDI5NyIgc3Ryb2tlPSIjOWYwNzE0IiBzdHJva2Utd2lkdGg9IjI4Ii8+PHBhdGggZD0iTTEwNCAzMjAgUTE1OSAyODcgMjA3IDMxNiBUMzEyIDMxOCBUNDEyIDI5NCIgc3Ryb2tlPSIjZTMyNDM1IiBzdHJva2Utd2lkdGg9IjkiLz48cGF0aCBkPSJNMTg1IDMxNiBRMjUxIDI2NSAyOTAgMzIzIFEyNjcgMzQ0IDIzMyAzMDcgUTIxMiAyNzQgMTgzIDMxOCIgc3Ryb2tlPSIjYmIxMDIxIiBzdHJva2Utd2lkdGg9IjE1Ii8+PHBhdGggZD0iTTIxMiAzMDYgUTI1MSAzNDIgMjgyIDMwNSIgc3Ryb2tlPSIjZWU0MjUxIiBzdHJva2Utd2lkdGg9IjQiLz48L2c+Cjwvc3ZnPg==" alt="Logo KR de Kizuna Rope, sin flores" />
-    <h1>KIZUNA <span>ROPE</span></h1>
-    <p>ARTE <b>•</b> TÉCNICA <b>•</b> CONEXIÓN</p>
+    <img class="splash-logo" src="./icon.svg?v=2" alt="Kizuna Rope, nudo con letras K y R"/>
+    <h1>Kizuna <span>Rope</span></h1>
+    <p>THE ROPE CLUB</p>
   </div>
   <div id="app-shell" class="app-shell" hidden>
     <header class="topbar">
       <button class="header-icon" data-action="menu" aria-label="Abrir menú" title="Menú"><span id="menu-icon"></span></button>
       <button class="brand" data-page="home" title="Kizuna Rope, inicio">
-        <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIgNTEyIiBhcmlhLWxhYmVsPSJLUiBLaXp1bmEgUm9wZSI+CjxkZWZzPjxyYWRpYWxHcmFkaWVudCBpZD0iYSI+PHN0b3Agc3RvcC1jb2xvcj0iIzI0MDgwYyIvPjxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iIzA3MDQwNCIvPjwvcmFkaWFsR3JhZGllbnQ+PGxpbmVhckdyYWRpZW50IGlkPSJyIiB4MT0iMCIgeDI9IjEiPjxzdG9wIHN0b3AtY29sb3I9IiM4MjAwMDkiLz48c3RvcCBvZmZzZXQ9Ii41IiBzdG9wLWNvbG9yPSIjZjAxYjJhIi8+PHN0b3Agb2Zmc2V0PSIxIiBzdG9wLWNvbG9yPSIjNzYwMjBkIi8+PC9saW5lYXJHcmFkaWVudD48L2RlZnM+CjxyZWN0IHdpZHRoPSI1MTIiIGhlaWdodD0iNTEyIiByeD0iMTE2IiBmaWxsPSIjMGEwNzA4Ii8+PGNpcmNsZSBjeD0iMjU2IiBjeT0iMjQ5IiByPSIxNzkiIGZpbGw9InVybCgjYSkiIHN0cm9rZT0idXJsKCNyKSIgc3Ryb2tlLXdpZHRoPSIxNSIvPgo8cGF0aCBkPSJNMTE0IDI1NSBBMTQyIDE0MiAwIDAgMSAzOTggMjU1IiBzdHJva2U9IiNlNTM1M2IiIHN0cm9rZS13aWR0aD0iMyIgZmlsbD0ibm9uZSIgb3BhY2l0eT0iLjUiLz4KPHRleHQgeD0iMjU3IiB5PSIzMDUiIGZvbnQtc2l6ZT0iMjA2IiBmb250LWZhbWlseT0iR2VvcmdpYSwnVGltZXMgTmV3IFJvbWFuJyxzZXJpZiIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZmlsbD0iI2Y0ZTZkMCIgbGV0dGVyLXNwYWNpbmc9Ii0zMiI+S1I8L3RleHQ+CjxnIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgZmlsbD0ibm9uZSI+PHBhdGggZD0iTTEwMyAzMjIgUTE1OSAyODkgMjA3IDMxOCBUMzEyIDMyMCBUNDE0IDI5NyIgc3Ryb2tlPSIjOWYwNzE0IiBzdHJva2Utd2lkdGg9IjI4Ii8+PHBhdGggZD0iTTEwNCAzMjAgUTE1OSAyODcgMjA3IDMxNiBUMzEyIDMxOCBUNDEyIDI5NCIgc3Ryb2tlPSIjZTMyNDM1IiBzdHJva2Utd2lkdGg9IjkiLz48cGF0aCBkPSJNMTg1IDMxNiBRMjUxIDI2NSAyOTAgMzIzIFEyNjcgMzQ0IDIzMyAzMDcgUTIxMiAyNzQgMTgzIDMxOCIgc3Ryb2tlPSIjYmIxMDIxIiBzdHJva2Utd2lkdGg9IjE1Ii8+PHBhdGggZD0iTTIxMiAzMDYgUTI1MSAzNDIgMjgyIDMwNSIgc3Ryb2tlPSIjZWU0MjUxIiBzdHJva2Utd2lkdGg9IjQiLz48L2c+Cjwvc3ZnPg==" alt="" />
-        <span class="brand-name">KIZUNA <em>ROPE</em><small>ARTE <i>•</i> TÉCNICA <i>•</i> CONEXIÓN</small></span>
+        <img class="brand-lockup" src="./logo-lockup.svg?v=2" alt="Kizuna Rope · The Rope Club"/>
       </button>
       <div class="header-actions">
         <button class="language" data-action="language" title="Cambiar idioma" aria-label="Cambiar idioma">EN</button>
