@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#090506">
+<meta name="description" content="Comunidad de Kizuna Rope para adultos: perfiles, publicaciones y conversaciones basadas en consentimiento y respeto.">
+<link rel="icon" href="./icon.svg" type="image/svg+xml">
+<link rel="manifest" href="./manifest.webmanifest">
+<title>Comunidad | Kizuna Rope</title>
+<style>
+:root{color-scheme:dark;--bg:#080608;--card:#171014;--border:#40292d;--red:#c91c2b;--cream:#f4e5d6;--muted:#bdaaa6}
+*{box-sizing:border-box}body{margin:0;min-height:100vh;background:radial-gradient(ellipse at top,#291014 0%,#0b0708 53%,#080608 100%);color:var(--cream);font-family:system-ui,-apple-system,Segoe UI,Arial,sans-serif}
+a{color:#ffc6c6}header{border-bottom:1px solid #47292c;background:#0b0809e8;position:sticky;top:0;z-index:5;backdrop-filter:blur(14px)}.topbar{max-width:1020px;margin:auto;padding:12px 17px;display:flex;align-items:center;justify-content:space-between;gap:15px}.brand{display:flex;align-items:center;gap:11px;text-decoration:none;color:#f7e9de;font-family:Georgia,serif;font-size:22px}.brand img{width:39px;height:39px}.brand b{color:#e22734}.back{font-size:13px;text-decoration:none;border:1px solid #603539;padding:9px 12px;border-radius:20px}
+main{max-width:800px;margin:auto;padding:36px 16px 70px}.eyebrow{font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:#d18d8d}h1{font-family:Georgia,serif;font-size:clamp(32px,6vw,51px);margin:8px 0 6px}h1 em{font-weight:normal;color:#ed3440}h2{font:26px Georgia,serif;margin:0 0 15px}h3{font:21px Georgia,serif;margin:0 0 6px}p{line-height:1.6}.intro{color:var(--muted);margin-bottom:26px}.panel,.post{background:linear-gradient(145deg,#211316,#100c0e);border:1px solid var(--border);border-radius:17px;padding:22px;margin:16px 0;box-shadow:0 12px 30px #0003}
+form{display:grid;gap:12px}label{font-size:14px;color:#e8d1cb}input,textarea{width:100%;padding:13px 14px;color:#fff;background:#0b090a;border:1px solid #6b4147;border-radius:9px;font:inherit}textarea{min-height:103px;resize:vertical}input:focus,textarea:focus{outline:2px solid #ca3946;outline-offset:1px}.check{display:flex;gap:9px;align-items:flex-start;line-height:1.5}.check input{width:auto;margin-top:4px}.actions{display:flex;gap:10px;align-items:center;flex-wrap:wrap}.btn{border:1px solid #a21c29;border-radius:9px;padding:11px 17px;background:linear-gradient(130deg,#9c0017,#d51b2d);color:#fff;font:600 14px system-ui;cursor:pointer}.btn:disabled{opacity:.5;cursor:wait}.btn.secondary{background:transparent;border:1px solid #775054;color:#f2d5d0}.btn.small{padding:8px 12px;font-size:12px}.tabs{display:flex;gap:10px;margin-bottom:18px}.tabs button[aria-selected=true]{background:#a71523;border-color:#a71523}.muted{color:var(--muted);font-size:13px}.note{background:#27191c;border-left:3px solid #d72a3c;padding:12px 15px;margin:15px 0;border-radius:4px;font-size:13px;color:#e8d9d5}.status{min-height:28px;padding:9px 0;color:#e7b0b3;font-size:14px}.status.error{color:#ffa69f}.status.ok{color:#a9e5bc}.posts-head{display:flex;align-items:center;justify-content:space-between;gap:15px}.post{padding:17px 20px}.post-top{display:flex;justify-content:space-between;gap:10px}.post-meta{font-size:12px;color:#bba3a0}.post-body{white-space:pre-wrap;overflow-wrap:anywhere}.comment{padding:9px 12px;margin:6px 0;background:#110d0e;border-left:2px solid #7c3b46;border-radius:5px;overflow-wrap:anywhere;font-size:14px}.comment strong{color:#f4c6c4}.comment-form{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}.comment-form input{flex:1 1 180px}.empty{padding:25px;text-align:center;color:var(--muted);border:1px dashed #5d3338;border-radius:12px}.userline{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}footer{text-align:center;padding:20px;color:#aa8585;font-size:12px}section[hidden],div[hidden]{display:none!important}
+@media(min-width:700px){.cols{display:grid;grid-template-columns:1fr 1fr;gap:16px}.cols .panel{margin:0}}@media(max-width:500px){.topbar{padding:11px}.brand{font-size:19px}.back{font-size:11px;padding:8px}.panel{padding:17px}}
+</style>
+<script defer src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.76.1/dist/umd/supabase.min.js"></script>
+<script defer src="./community.js"></script>
+</head>
+<body>
+<header><div class="topbar"><a class="brand" href="./index.html"><img src="./icon.svg" alt=""><span>Kizuna <b>Rope</b></span></a><a class="back" href="./index.html">← Volver al inicio</a></div></header>
+<main>
+<div class="eyebrow">Arte · Técnica · Conexión</div>
+<h1>Nuestra <em>comunidad</em></h1>
+<p class="intro">Un espacio para mayores de 18 años donde compartir ideas, aprender y conectar con respeto, privacidad y consentimiento.</p>
+<div id="status" class="status" role="status" aria-live="polite"></div>
+<section id="auth" hidden>
+<div class="panel">
+<h2>Accede a Kizuna Rope</h2>
+<div class="tabs"><button id="tab-login" class="btn secondary" type="button" aria-selected="true">Iniciar sesión</button><button id="tab-register" class="btn secondary" type="button" aria-selected="false">Crear cuenta</button></div>
+<form id="auth-form">
+<label for="email">Correo electrónico</label><input id="email" type="email" autocomplete="email" maxlength="254" required>
+<label for="password">Contraseña (mínimo 8 caracteres)</label><input id="password" type="password" autocomplete="current-password" minlength="8" required>
+<div id="signup-rules" hidden>
+<label class="check"><input id="signup-adult" type="checkbox"> Confirmo que tengo 18 años o más.</label>
+<label class="check"><input id="signup-consent" type="checkbox"> Acepto las normas de respeto, consentimiento y privacidad de la comunidad.</label>
+</div>
+<button id="auth-submit" type="submit" class="btn">Entrar</button>
+</form>
+<p class="muted">Al crear tu cuenta, es posible que debas confirmar tu correo electrónico antes de iniciar sesión. No publiques información privada de otras personas.</p>
+</div></section>
+<section id="onboarding" hidden><div class="panel">
+<h2>Completa tu perfil</h2>
+<p class="muted">Tu nombre de usuario y presentación podrán verlos otras personas registradas. Tu correo electrónico no se mostrará en la comunidad.</p>
+<form id="profile-form">
+<label for="nickname">Nombre público</label><input id="nickname" minlength="2" maxlength="35" autocomplete="nickname" required>
+<label for="bio">Presentación (opcional)</label><textarea id="bio" maxlength="320"></textarea>
+<label class="check"><input id="profile-adult" type="checkbox" required> Confirmo que soy mayor de 18 años.</label>
+<label class="check"><input id="profile-rules" type="checkbox" required> Acepto las reglas de consentimiento, respeto y privacidad.</label>
+<button type="submit" class="btn">Guardar perfil</button>
+</form>
+<div class="actions" style="margin-top:15px"><button class="btn secondary" id="onboard-logout">Cerrar sesión</button></div>
+</div></section>
+<section id="community" hidden>
+<div class="panel"><div class="userline"><div><h2 style="margin:0">Hola, <span id="welcome"></span></h2><p class="muted" style="margin:5px 0">Tu comunidad está conectada a Kizuna Rope.</p></div><button id="logout" class="btn secondary">Salir</button></div></div>
+<div class="panel"><h2>Comparte una publicación</h2><form id="post-form"><label for="post-body">¿Qué quieres compartir?</label><textarea id="post-body" maxlength="1000" required placeholder="Ideas, preguntas o experiencias compartidas con respeto..."></textarea><label class="check"><input id="post-rules" type="checkbox" required> Respeto los límites, la privacidad y el consentimiento de otras personas.</label><button class="btn" type="submit">Publicar</button></form><p class="muted">Por ahora se admiten publicaciones de texto. Las fotografías llegarán en una actualización posterior.</p></div>
+<div class="posts-head"><h2>Publicaciones</h2><button id="refresh" type="button" class="btn secondary small">Actualizar</button></div>
+<div id="feed" aria-live="polite"></div>
+</section>
+<div class="note">Esta es la primera versión de la comunidad. Debemos completar pruebas con cuentas reales y funciones de moderación antes de invitar a un grupo amplio.</div>
+</main>
+<footer>© 2026 Kizuna Rope · Propiedad de Reysel Reyes · Todos los derechos reservados.</footer>
+</body>
+</html>
