@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" aria-label="KR Kizuna Rope">
+<defs><radialGradient id="a"><stop stop-color="#24080c"/><stop offset="1" stop-color="#070404"/></radialGradient><linearGradient id="r" x1="0" x2="1"><stop stop-color="#820009"/><stop offset=".5" stop-color="#f01b2a"/><stop offset="1" stop-color="#76020d"/></linearGradient></defs>
+<rect width="512" height="512" rx="116" fill="#0a0708"/><circle cx="256" cy="249" r="179" fill="url(#a)" stroke="url(#r)" stroke-width="15"/>
+<path d="M114 255 A142 142 0 0 1 398 255" stroke="#e5353b" stroke-width="3" fill="none" opacity=".5"/>
+<text x="257" y="305" font-size="206" font-family="Georgia,'Times New Roman',serif" text-anchor="middle" fill="#f4e6d0" letter-spacing="-32">KR</text>
+<g stroke-linecap="round" fill="none"><path d="M103 322 Q159 289 207 318 T312 320 T414 297" stroke="#9f0714" stroke-width="28"/><path d="M104 320 Q159 287 207 316 T312 318 T412 294" stroke="#e32435" stroke-width="9"/><path d="M185 316 Q251 265 290 323 Q267 344 233 307 Q212 274 183 318" stroke="#bb1021" stroke-width="15"/><path d="M212 306 Q251 342 282 305" stroke="#ee4251" stroke-width="4"/></g>
+</svg>
